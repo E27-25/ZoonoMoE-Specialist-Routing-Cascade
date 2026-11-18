@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/readme/hero.svg" width="100%" alt="ZoonoMoE poster header with KMITL and ICONIP 2026 logos. Voice-driven zoonotic disease surveillance: a farmer speaks a field report in Thai or English and a six-stage on-device cascade speaks back a veterinary risk assessment. Router macro F1 0.957, cascade macro F1 0.969, about 6% of queries escalate to the neural encoder, average routing cost 1.3 ms, fully on-device.">
+  <img src="assets/readme/hero.svg" width="100%" alt="ZoonoMoE header with KMITL and ICONIP 2026 logos and the mascot hugging a chicken. Voice-driven zoonotic disease surveillance: a farmer speaks a field report in Thai or English and a six-stage on-device cascade speaks back a veterinary risk assessment. Router macro F1 0.957, cascade macro F1 0.969, about 6% of queries escalate to the neural encoder, average routing cost 1.3 ms, fully on-device.">
 </p>
 
 <p align="center">
@@ -25,8 +25,6 @@
 </p>
 
 ## Highlights
-
-<img src="assets/mascot/a01.png" align="right" width="190" alt="Mascot speaking into a microphone">
 
 - **System-level Mixture-of-Experts.** A cheap, calibrated router (the *control plane*) picks 1 of 6 disease domains; that one decision selects the evidence partition, the expert persona and the voice for a single shared LLM (the *data plane*). No per-domain model copies.
 - **Confidence-gated cascade.** TF–IDF + calibrated LogReg answers easy reports in < 1 ms; only the uncertain ~6% go to MiniLM + MLP. Cascade macro F1 **0.969** at **1.29 ms** average, versus **0.957** at ~13 ms for the embedding router alone.
@@ -58,8 +56,6 @@
 | Linux, CPU only | Whisper + Pathumma-th | vLLM CPU, Qwen2.5-1.5B | Kokoro local pool | vLLM |
 
 ### 🍎 Mac (Apple Silicon)
-
-<img src="assets/mascot/a03.png" align="right" width="170" alt="Mascot typing on a laptop">
 
 ```bash
 git clone https://github.com/E27-25/ZoonoMoE-Specialist-Routing-Cascade.git
@@ -95,8 +91,6 @@ docker compose up --build
 
 ### 🧪 Try these reports
 
-<p align="center"><img src="assets/mascot/b01.png" width="130" alt="Mascot with microphone"> <img src="assets/mascot/b05.png" width="130" alt="Mascot with a paw-print report"> <img src="assets/mascot/b09.png" width="130" alt="Mascot surprised"> <img src="assets/mascot/a07.png" width="130" alt="Mascot thinking"></p>
-
 | Domain | Input |
 |---|---|
 | Avian flu | `30 chickens died this morning with purple combs and twisted necks, labored breathing` |
@@ -112,8 +106,6 @@ docker compose up --build
 <p align="center"><img src="assets/readme/h-deep.svg" width="100%" alt="Under the hood: stages, serving and ops."></p>
 
 ### 🔄 The six stages
-
-<img src="assets/mascot/a04.png" align="right" width="200" alt="Mascot pointing at a network of animal domains">
 
 <details>
 <summary><b>Stage 1 · ASR</b> &nbsp;<sub>audio → text</sub></summary>
@@ -224,8 +216,6 @@ train(model_dir=Path('models'), extra_data=Path('data/router_training.jsonl'))
 
 ### 🏗️ Serving topology
 
-<img src="assets/mascot/a12.png" align="right" width="150" alt="Mascot cheering">
-
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'primaryColor':'#ffffff','primaryTextColor':'#0b2545','primaryBorderColor':'#0b2545','lineColor':'#13807a','secondaryColor':'#e3f1ef','tertiaryColor':'#f5f7fa','clusterBkg':'#f5f7fa','clusterBorder':'#c9d1db','fontFamily':'ui-sans-serif'}}}%%
 flowchart TB
@@ -265,8 +255,6 @@ flowchart TB
 
 ### 🎧 Demo samples & verified run
 
-<img src="assets/mascot/a14.png" align="right" width="170" alt="Mascot listening to audio on a phone">
-
 The full pipeline was validated **end to end on an NVIDIA A100-40 GB** (Qwen3-14B via vLLM, 6/6 stages green). Audio lives in [`backend/samples/`](backend/samples/):
 
 | ▶︎ Play | Length | What |
@@ -290,8 +278,6 @@ input  : "Three of my chickens died overnight. Their combs were blue and
 Reproduce on LANTA: `sbatch backend/make_samples.sbatch` (samples) or `sbatch backend/zoono_smoke.sbatch` (per-stage PASS/FAIL). JaiTTS/F5 (Thai) is ~4× slower than Kokoro, hence the longer Thai audio.
 
 ### 📈 Performance
-
-<img src="assets/mascot/a09.png" align="right" width="150" alt="Mascot giving a thumbs up">
 
 | Metric | Value |
 |---|---|
@@ -454,8 +440,6 @@ ZoonoMoE-Specialist-Routing-Cascade/
 }
 ```
 
-<img src="assets/mascot/a06.png" align="right" width="150" alt="Mascot holding a health shield">
-
 **Scope.** The paper evaluates the control plane (routing quality, cascade cost and calibration). ASR word-error rate, Stage-2 extraction accuracy and a veterinary-adjudicated study of the Stage-5 risk output are future work; this system is a research prototype, not a diagnostic tool.
 
 <details>
@@ -474,7 +458,5 @@ ZoonoMoE-Specialist-Routing-Cascade/
 <p align="center">
   <img src="assets/readme/footer.svg" width="100%" alt="Aligning a lightweight control plane with partitioned retrieval. Watin Promfiy and Atibodee Kuiprasert, KMITL, ICONIP 2026.">
 </p>
-
-<p align="center"><img src="assets/mascot/b16.png" width="110" alt="Mascot making a heart"></p>
 
 <p align="center"><sub>Built at KMITL · 2026 · Thanks to the Department of Livestock Development (DLD), Thailand, for domain guidance.</sub></p>
