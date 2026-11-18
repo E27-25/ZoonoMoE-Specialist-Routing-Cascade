@@ -397,6 +397,7 @@ ZoonoMoE-Specialist-Routing-Cascade/
 │   └── *.sbatch                  # LANTA HPC jobs
 ├── frontend/src/app/             # Next.js 15 app, /dashboard, API routes
 ├── paper/                        # ICONIP 2026 paper (LaTeX, figures, PDF)
+├── poster/                       # A0 poster: print PDFs, PNGs, previews
 ├── docs/                         # deployment & ops guides
 └── examples/sample_field_report.m4a
 ```
@@ -428,6 +429,13 @@ ZoonoMoE-Specialist-Routing-Cascade/
 <p align="center"><img src="assets/readme/h-cite.svg" width="100%" alt="Paper: read and cite."></p>
 
 📄 **[ZoonoMoE-ICONIP2026.pdf](paper/ZoonoMoE-ICONIP2026.pdf)** · LaTeX source in [`paper/`](paper/)
+
+🖼️ **Poster (A0):** download from [`poster/`](poster/) — [Full PDF](poster/ZoonoMoE_A0_KMITL_full.pdf) · [Simplified PDF](poster/ZoonoMoE_A0_KMITL_simplified.pdf) · KMUTT-logo versions and PNGs are in the folder.
+
+<p align="center">
+  <a href="poster/"><img src="poster/ZoonoMoE_A0_KMITL_full_preview.jpg" width="42%" alt="ZoonoMoE A0 poster, full version"></a>
+  <a href="poster/"><img src="poster/ZoonoMoE_A0_KMITL_simplified_preview.jpg" width="42%" alt="ZoonoMoE A0 poster, simplified version"></a>
+</p>
 
 ```bibtex
 @inproceedings{promfiy2026zoonomoe,
